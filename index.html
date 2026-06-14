@@ -1,1 +1,272 @@
-<h1>ZyeemZia Trust Center - Connection Successful</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZyeemZia™ | Trust & Security Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           BASE STYLING & THEME (DEFAULT: LIGHT MODE) 
+           ========================================= */
+        body { 
+            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background: #f8fafc; 
+            color: #0f172a; 
+            text-align: left; 
+            padding: 50px 20px; 
+            line-height: 1.6; 
+            margin: 0;
+            transition: background-color 0.3s ease, color 0.3s ease; 
+        }
+        .container { max-width: 950px; margin: 0 auto; position: relative; z-index: 1; }
+        
+        /* Dashboard Header */
+        .header { margin-bottom: 40px; text-align: center; }
+        .header h1 { 
+            color: #0f172a; 
+            font-size: 42px; 
+            margin-bottom: 5px; 
+            letter-spacing: 2px; 
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        .header p { 
+            color: #64748b; 
+            font-size: 16px; 
+            margin-top: 0; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-weight: 600;
+        }
+
+        /* Corporate Identity Section (Crucial for Meta/LinkedIn) */
+        .legal-entity-box {
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+            padding: 25px 35px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .legal-entity-box h3 {
+            color: #0f172a;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 22px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        .legal-entity-box p {
+            color: #475569;
+            font-size: 16px;
+            margin: 5px 0;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .legal-entity-box strong { color: #0f172a; transition: color 0.3s ease; }
+
+        /* Grid Layout System for Policies */
+        .policy-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 30px; 
+            margin-bottom: 40px; 
+        }
+        
+        /* Policy Modules */
+        .policy-card { 
+            background: #ffffff; 
+            padding: 35px; 
+            border-radius: 12px; 
+            border: 1px solid #e2e8f0; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); 
+            transition: all 0.3s ease; 
+        }
+        .policy-card h2 { 
+            margin-top: 0; 
+            margin-bottom: 15px; 
+            font-size: 24px; 
+            font-weight: 700; 
+            letter-spacing: 0.5px; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .policy-card p, .policy-card li { 
+            color: #475569; 
+            font-size: 16px; 
+            font-weight: 500; 
+            margin-bottom: 15px; 
+            transition: color 0.3s ease; 
+            text-align: justify;
+        }
+        .policy-card ul { padding-left: 20px; }
+
+        .amber-accent h2 { color: #f59e0b; }
+        .blue-accent h2 { color: #3b82f6; }
+        .emerald-accent h2 { color: #10b981; }
+        .slate-accent h2 { color: #64748b; }
+
+        /* Return Button */
+        .return-nav {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            transition: border-color 0.3s ease;
+        }
+        .return-btn { 
+            display: inline-flex;
+            align-items: center;
+            font-family: inherit; 
+            color: #475569; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 15px; 
+            border: 1px solid #cbd5e1; 
+            padding: 12px 24px; 
+            border-radius: 30px; 
+            letter-spacing: 1px;
+            transition: all 0.2s ease; 
+            background: transparent;
+        }
+        .return-btn:hover { background: #e2e8f0; color: #0f172a; border-color: #94a3b8; }
+
+        /* THEME TOGGLE BUTTON */
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #475569; 
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn:hover { transform: scale(1.1); border-color: #94a3b8; color: #0f172a; }
+        .icon-moon { display: block; }
+        .icon-sun { display: none; }
+
+        /* =========================================
+           DARK MODE OVERRIDES 
+           ========================================= */
+        body.dark-mode { background: #090d16; color: #f1f5f9; }
+        body.dark-mode .header h1 { color: #f8fafc; }
+        
+        body.dark-mode .legal-entity-box { background: rgba(17, 24, 39, 0.6); border-color: #1f2937; border-left-color: #3b82f6; }
+        body.dark-mode .legal-entity-box h3 { color: #e2e8f0; border-bottom-color: #334155; }
+        body.dark-mode .legal-entity-box p { color: #94a3b8; }
+        body.dark-mode .legal-entity-box strong { color: #f8fafc; }
+        
+        body.dark-mode .policy-card { background: #111827; border-color: #1f2937; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+        body.dark-mode .policy-card p, body.dark-mode .policy-card li { color: #9ca3af; }
+        
+        body.dark-mode .return-nav { border-top-color: #1f2937; }
+        body.dark-mode .return-btn { border-color: #334155; color: #94a3b8; }
+        body.dark-mode .return-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
+        
+        body.dark-mode .theme-toggle-btn { background: #111827; border-color: #334155; color: #94a3b8; }
+        body.dark-mode .theme-toggle-btn:hover { border-color: #475569; color: #f8fafc; }
+
+        body.dark-mode .icon-moon { display: none; }
+        body.dark-mode .icon-sun { display: block; }
+    </style>
+</head>
+<body>
+    <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Mode">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+
+    <div class="container">
+        
+        <div class="header">
+            <h1>ZYEEMZIA™ TRUST CENTER</h1>
+            <p>Official Corporate Policy & Legal Hub</p>
+        </div>
+
+        <div class="legal-entity-box">
+            <h3>Corporate Identity & Legal Entity</h3>
+            <p>This Trust Center governs the digital infrastructure, software products, and operational protocols of ZyeemZia™.</p>
+            <p><strong>Legal Entity Name:</strong> Zyeem Bin Zia</p>
+            <p><strong>Tax Identification Number (TIN):</strong> 455794641335</p>
+            <p><strong>Registered Corporate Address:</strong> Plot-109, Road-1, Mirpur DOHS, Thana: Mirpur, Dhaka-1216, Bangladesh</p>
+            <p><strong>Official Contact:</strong> admin@zyeemzia.com</p>
+        </div>
+
+        <div class="policy-grid">
+
+            <div class="policy-card amber-accent">
+                <h2>1. Terms of Operations & Service</h2>
+                <p>By accessing software modules, applications, or technical frameworks published by ZyeemZia™ (including but not limited to Military Abbreviation, GR Converter Pro, and Golf Gadget Pro), users agree to adhere to these operational terms. Our software is provided "as is" and is designed for high-precision technical, tactical, and civilian utility.</p>
+                <p>ZyeemZia™ reserves the right to update computational algorithms, modify coordinate engines, and adjust app interfaces at our discretion to maintain operational excellence and platform security.</p>
+            </div>
+
+            <div class="policy-card blue-accent">
+                <h2>2. Global Privacy & Telemetry Protocol</h2>
+                <p>We respect the operational security and privacy of our global user base. Our data collection philosophy is minimal, explicit, and secure.</p>
+                <ul>
+                    <li><strong>Offline-First Architecture:</strong> Modules like the <em>Military Abbreviation</em> dictionary are engineered to function entirely offline, preventing unauthorized intelligence leakage.</li>
+                    <li><strong>Location & Topography:</strong> Tools requiring active GPS or Kalman-filtered coordinate tracking (e.g., <em>GR Converter Pro</em> and <em>Golf Gadget Pro</em>) process location data strictly locally on the user's device unless multiplayer/joint-operation functionality is explicitly enabled by the user.</li>
+                    <li><strong>No Unauthorized Tracking:</strong> We do not sell user biometric or personal identity data to third-party brokers. Advertising telemetry is governed strictly by standardized Google AdMob and Meta Audience Network mediation protocols.</li>
+                </ul>
+            </div>
+
+            <div class="policy-card emerald-accent">
+                <h2>3. Intellectual Property & Trademarks</h2>
+                <p>All software architectures, UI/UX designs, algorithms, codebases, and digital assets distributed under the ZyeemZia™ banner are the exclusive intellectual property of Zyeem Bin Zia.</p>
+                <p>The "ZyeemZia™" name, associated logos, and product titles (Military Abbreviation, GR Converter Pro, Golf Gadget Pro) are protected under international copyright and trademark protocols. Reverse engineering, unauthorized distribution, or brand impersonation is strictly prohibited and will be met with immediate digital platform takedowns.</p>
+            </div>
+
+            <div class="policy-card slate-accent">
+                <h2>4. App Store Compliance & Security</h2>
+                <p>All software published by ZyeemZia™ complies with the Developer Program Policies of the Google Play Store. We employ rigorous security audits to ensure that our applications are free from malicious payloads, unauthorized background scraping, and unauthorized privilege escalation.</p>
+                <p>For specific app-level Privacy Protocols, users are directed to view the dedicated policy links within the main dashboard of their respective applications.</p>
+            </div>
+
+        </div>
+        
+        <div class="return-nav">
+            <a class="return-btn" href="https://zyeemzia.com">&larr; RETURN TO MAIN COMMAND DASHBOARD</a>
+        </div>
+
+    </div>
+
+    <script>
+        // THEME TOGGLE LOGIC - Synchronized with main site
+        const themeBtn = document.getElementById('themeToggle');
+        const bodyElement = document.body;
+        
+        // Check local storage so the theme matches whatever they chose on the main site
+        if(localStorage.getItem('matrixTheme') === 'dark') {
+            bodyElement.classList.add('dark-mode');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            bodyElement.classList.toggle('dark-mode');
+            
+            if(bodyElement.classList.contains('dark-mode')) {
+                localStorage.setItem('matrixTheme', 'dark');
+            } else {
+                localStorage.setItem('matrixTheme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>
