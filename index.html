@@ -12,6 +12,11 @@
         /* =========================================
            BASE STYLING & THEME (DEFAULT: LIGHT MODE) 
            ========================================= */
+        /* GLOBAL RESET FOR OVERFLOW PREVENTION */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         body { 
             font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
             background: #f8fafc; 
@@ -20,6 +25,7 @@
             padding: 50px 20px; 
             line-height: 1.6; 
             margin: 0;
+            overflow-x: hidden; /* Prevents horizontal scroll wobbling */
             transition: background-color 0.3s ease, color 0.3s ease; 
         }
         .container { max-width: 950px; margin: 0 auto; position: relative; z-index: 1; }
@@ -52,6 +58,7 @@
             margin-bottom: 50px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            width: 100%;
         }
         .legal-entity-box h3 {
             color: #0f172a;
@@ -89,6 +96,7 @@
             border: 1px solid #e2e8f0; 
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); 
             transition: all 0.3s ease; 
+            width: 100%;
         }
         .policy-card h2 { 
             margin-top: 0; 
@@ -128,11 +136,12 @@
 
         /* Contact Form Specifics */
         .contact-form { display: flex; flex-direction: column; gap: 20px; margin-top: 25px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; width: 100%; }
         .form-group label { font-weight: 600; color: #0f172a; font-size: 15px; transition: color 0.3s ease; }
         
         .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
             font-family: inherit;
             padding: 12px 15px;
             border: 1px solid #cbd5e1;
@@ -155,19 +164,23 @@
         }
 
         /* Phone Input with Country Code Wrapper */
-        .phone-wrapper { display: flex; }
+        .phone-wrapper { display: flex; width: 100%; }
         .phone-wrapper select {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
-            border-right: 0; /* Merges cleanly with the input field */
-            width: 150px; /* Optimized to display full country descriptors */
+            border-right: 0; 
+            width: 150px; 
             padding: 12px 10px;
             cursor: pointer;
+            text-overflow: ellipsis; /* Ensures long names don't bleed visually */
+            overflow: hidden;
+            white-space: nowrap;
         }
         .phone-wrapper input {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             flex: 1;
+            min-width: 0; /* Critical flexbox fix: allows input to shrink safely */
         }
 
         .submit-btn {
@@ -182,13 +195,16 @@
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
-            align-self: flex-start;
+            align-self: center; 
+            width: 100%;
+            max-width: 400px;
+            margin-top: 10px;
         }
         .submit-btn:hover { background: #7c3aed; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); }
 
         @media (max-width: 650px) {
+            .policy-card { padding: 25px 20px; } /* Gives form fields more horizontal room */
             .form-row { grid-template-columns: 1fr; }
-            .submit-btn { width: 100%; align-self: center; }
             .phone-wrapper select { width: 120px; font-size: 14px; }
         }
 
@@ -295,7 +311,7 @@
     <div class="container">
         
         <div class="header">
-            <h1>ZyeemZia™ TRUST CENTER</h1>
+            <h1>ZYEEMZIA™ TRUST CENTER</h1>
             <p>Official Corporate Policy & Legal Hub</p>
         </div>
 
@@ -338,7 +354,6 @@
                 <p>For specific app-level Privacy Protocols, users are directed to view the dedicated policy links within the main dashboard of their respective applications.</p>
             </div>
 
-            <!-- CONTACT FORM SECTION -->
             <div class="policy-card purple-accent">
                 <h2>5. Contact & Support Escalation</h2>
                 <p>For operational inquiries, tactical software support, or data privacy concerns, please submit a secure message through the interface below.</p>
@@ -366,7 +381,6 @@
                         <div class="form-group">
                             <label for="phone">Phone Number (Optional)</label>
                             <div class="phone-wrapper">
-                                <!-- Comprehensive Global Calling Codes Dropdown -->
                                 <select id="countryCode" name="Country Code">
                                     <option value="+93">+93 (Afghanistan)</option>
                                     <option value="+355">+355 (Albania)</option>
