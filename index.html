@@ -110,10 +110,20 @@
         }
         .policy-card ul { padding-left: 20px; }
 
+        /* Accent Colors & Dynamic Left Borders */
+        .amber-accent { border-left: 4px solid #f59e0b; }
         .amber-accent h2 { color: #f59e0b; }
+        
+        .blue-accent { border-left: 4px solid #3b82f6; }
         .blue-accent h2 { color: #3b82f6; }
+        
+        .emerald-accent { border-left: 4px solid #10b981; }
         .emerald-accent h2 { color: #10b981; }
+        
+        .slate-accent { border-left: 4px solid #64748b; }
         .slate-accent h2 { color: #64748b; }
+        
+        .purple-accent { border-left: 4px solid #8b5cf6; }
         .purple-accent h2 { color: #8b5cf6; }
 
         /* Contact Form Specifics */
@@ -242,6 +252,14 @@
         body.dark-mode .legal-entity-box strong { color: #f8fafc; }
         
         body.dark-mode .policy-card { background: #111827; border-color: #1f2937; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+        
+        /* Preserve the specific left border colors in Dark Mode */
+        body.dark-mode .amber-accent { border-left-color: #f59e0b; }
+        body.dark-mode .blue-accent { border-left-color: #3b82f6; }
+        body.dark-mode .emerald-accent { border-left-color: #10b981; }
+        body.dark-mode .slate-accent { border-left-color: #64748b; }
+        body.dark-mode .purple-accent { border-left-color: #8b5cf6; }
+
         body.dark-mode .policy-card p, body.dark-mode .policy-card li { color: #9ca3af; }
         
         /* Dark Mode Form Overrides */
@@ -277,7 +295,7 @@
     <div class="container">
         
         <div class="header">
-            <h1>ZyeemZia™ TRUST CENTER</h1>
+            <h1>ZYEEMZIA™ TRUST CENTER</h1>
             <p>Official Corporate Policy & Legal Hub</p>
         </div>
 
@@ -320,7 +338,6 @@
                 <p>For specific app-level Privacy Protocols, users are directed to view the dedicated policy links within the main dashboard of their respective applications.</p>
             </div>
 
-            <!-- CONTACT FORM SECTION -->
             <div class="policy-card purple-accent">
                 <h2>5. Contact & Support Escalation</h2>
                 <p>For operational inquiries, tactical software support, or data privacy concerns, please submit a secure message through the interface below.</p>
@@ -348,7 +365,6 @@
                         <div class="form-group">
                             <label for="phone">Phone Number (Optional)</label>
                             <div class="phone-wrapper">
-                                <!-- Comprehensive Global Calling Codes Dropdown -->
                                 <select id="countryCode" name="Country Code">
                                     <option value="+93">+93 (Afghanistan)</option>
                                     <option value="+355">+355 (Albania)</option>
