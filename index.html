@@ -43,7 +43,7 @@
             font-weight: 600;
         }
 
-        /* Corporate Identity Section (Crucial for Meta/LinkedIn) */
+        /* Corporate Identity Section */
         .legal-entity-box {
             background: rgba(255, 255, 255, 0.8);
             border-left: 4px solid #3b82f6;
@@ -121,7 +121,8 @@
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .form-group { display: flex; flex-direction: column; gap: 6px; }
         .form-group label { font-weight: 600; color: #0f172a; font-size: 15px; transition: color 0.3s ease; }
-        .form-group input, .form-group textarea {
+        
+        .form-group input, .form-group textarea, .form-group select {
             font-family: inherit;
             padding: 12px 15px;
             border: 1px solid #cbd5e1;
@@ -137,11 +138,28 @@
             border: 1px dashed #cbd5e1;
             cursor: pointer;
         }
-        .form-group input:focus, .form-group textarea:focus {
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
             outline: none;
             border-color: #8b5cf6;
             box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
         }
+
+        /* Phone Input with Country Code Wrapper */
+        .phone-wrapper { display: flex; }
+        .phone-wrapper select {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0; /* Merges cleanly with the input field */
+            width: 130px;
+            padding: 12px 10px;
+            cursor: pointer;
+        }
+        .phone-wrapper input {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            flex: 1;
+        }
+
         .submit-btn {
             background: #8b5cf6;
             color: #ffffff;
@@ -161,6 +179,7 @@
         @media (max-width: 650px) {
             .form-row { grid-template-columns: 1fr; }
             .submit-btn { width: 100%; align-self: center; }
+            .phone-wrapper select { width: 110px; }
         }
 
         /* Return Button */
@@ -227,13 +246,13 @@
         
         /* Dark Mode Form Overrides */
         body.dark-mode .form-group label { color: #e2e8f0; }
-        body.dark-mode .form-group input, body.dark-mode .form-group textarea {
+        body.dark-mode .form-group input, body.dark-mode .form-group textarea, body.dark-mode .form-group select {
             background: #1e293b;
             border-color: #334155;
             color: #f1f5f9;
         }
         body.dark-mode .form-group input[type="file"] { border-color: #334155; }
-        body.dark-mode .form-group input:focus, body.dark-mode .form-group textarea:focus {
+        body.dark-mode .form-group input:focus, body.dark-mode .form-group textarea:focus, body.dark-mode .form-group select:focus {
             border-color: #8b5cf6;
             box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
         }
@@ -307,9 +326,7 @@
                 <p>For operational inquiries, tactical software support, or data privacy concerns, please submit a secure message through the interface below.</p>
                 
                 <form action="https://formsubmit.co/zyeemz@gmail.com" method="POST" enctype="multipart/form-data" class="contact-form">
-                    <!-- Configures the subject line of the email you receive -->
                     <input type="hidden" name="_subject" value="New Submission via ZyeemZia Trust Center">
-                    <!-- Disables the auto-captcha page to keep the experience seamless -->
                     <input type="hidden" name="_captcha" value="false">
 
                     <div class="form-row">
@@ -330,7 +347,39 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number (Optional)</label>
-                            <input type="tel" id="phone" name="Phone" placeholder="+1 (555) 000-0000">
+                            <div class="phone-wrapper">
+                                <!-- Country Code Dropdown -->
+                                <select id="countryCode" name="Country Code">
+                                    <option value="+1">+1 (US/CA)</option>
+                                    <option value="+44">+44 (UK)</option>
+                                    <option value="+61">+61 (AU)</option>
+                                    <option value="+86">+86 (CN)</option>
+                                    <option value="+880" selected>+880 (BD)</option>
+                                    <option value="+91">+91 (IN)</option>
+                                    <option value="+92">+92 (PK)</option>
+                                    <option value="+971">+971 (UAE)</option>
+                                    <option disabled>──────</option>
+                                    <option value="+20">+20 (EG)</option>
+                                    <option value="+27">+27 (ZA)</option>
+                                    <option value="+33">+33 (FR)</option>
+                                    <option value="+34">+34 (ES)</option>
+                                    <option value="+39">+39 (IT)</option>
+                                    <option value="+49">+49 (DE)</option>
+                                    <option value="+52">+52 (MX)</option>
+                                    <option value="+55">+55 (BR)</option>
+                                    <option value="+60">+60 (MY)</option>
+                                    <option value="+62">+62 (ID)</option>
+                                    <option value="+63">+63 (PH)</option>
+                                    <option value="+65">+65 (SG)</option>
+                                    <option value="+81">+81 (JP)</option>
+                                    <option value="+82">+82 (KR)</option>
+                                    <option value="+94">+94 (LK)</option>
+                                    <option value="+234">+234 (NG)</option>
+                                    <option value="+254">+254 (KE)</option>
+                                    <option value="+966">+966 (SA)</option>
+                                </select>
+                                <input type="tel" id="phone" name="Phone" placeholder="1700 000000">
+                            </div>
                         </div>
                     </div>
 
