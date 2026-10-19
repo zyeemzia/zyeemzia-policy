@@ -300,6 +300,14 @@
 
         body.dark-mode .icon-moon { display: none; }
         body.dark-mode .icon-sun { display: block; }
+        .policy-links { list-style: none; padding-left: 0; }
+        .policy-links li { margin-bottom: 10px; line-height: 1.7; }
+        .policy-card a, .legal-entity-box a { color: #2563eb; font-weight: 600; text-decoration: none; }
+        .policy-card a:hover, .legal-entity-box a:hover { text-decoration: underline; }
+        body.dark-mode .policy-card a, body.dark-mode .legal-entity-box a { color: #60a5fa; }
+        .policy-date { margin-top: 14px; font-size: 14px; opacity: 0.8; }
+            /* phones: justified text leaves wide gaps between words, so use normal alignment */
+        @media (max-width: 650px) { .container, .container p, .container li, .policy-card, .policy-card p, .policy-card li, .legal-entity-box p { text-align: left; } }
     </style>
     <link rel="stylesheet" href="https://zyeemzia.com/transmit.css?v=3">
     <style>.policy-grid > .tx { margin: 0; }</style>
@@ -319,44 +327,70 @@
 
         <div class="legal-entity-box">
             <h3>Corporate Identity & Legal Entity</h3>
-            <p>This Trust Center governs the digital infrastructure, software products, and operational protocols of ZyeemZia™.</p>
+            <p>This Trust Center sets out the terms, privacy principles and policies for every product published by ZyeemZia™.</p>
             <p><strong>Legal Entity Name:</strong> Zyeem Bin Zia</p>
             <p><strong>Tax Identification Number (TIN):</strong> 455794641335</p>
             <p><strong>Registered Corporate Address:</strong> Plot-109, Avenue - 1, (Old Road-1), Mirpur DOHS, Thana: Mirpur, Dhaka-1216, Bangladesh</p>
-            <p><strong>Official Contact:</strong> admin@zyeemzia.com</p>
+            <p><strong>Brands:</strong> ZyeemZia™, ZBZGames™ and ZyeemZia™ Academy</p>
+            <p><strong>Official Contact:</strong> <a href="mailto:admin@zyeemzia.com">admin@zyeemzia.com</a></p>
         </div>
 
         <div class="policy-grid">
 
             <div class="policy-card amber-accent">
-                <h2>1. Terms of Operations & Service</h2>
-                <p>By accessing software modules, applications, or technical frameworks published by ZyeemZia™ (including but not limited to Military Abbreviation, GR Converter Pro, and Golf Gadget Pro), users agree to adhere to these operational terms. Our software is provided "as is" and is designed for high-precision technical, tactical, and civilian utility.</p>
-                <p>ZyeemZia™ reserves the right to update computational algorithms, modify coordinate engines, and adjust app interfaces at our discretion to maintain operational excellence and platform security.</p>
+                <h2>1. Terms of Use</h2>
+                <p>These terms apply to every app, game, website and course published by ZyeemZia™, including the ZBZGames™ titles and the ZyeemZia™ Academy. An individual product may add its own terms, and anything you obtain through Google Play is also covered by Google Play's terms.</p>
+                <ul>
+                    <li><strong>Fair use:</strong> use our products lawfully and for their intended purpose. Do not attempt to break their security, interfere with the services behind them, copy them at scale, or pass them off as your own.</li>
+                    <li><strong>Reference tools:</strong> navigation, coordinate, abbreviation, calculation and planning features are aids only. Always cross-check with approved maps, instruments, official publications and your organisation's procedures before relying on a result.</li>
+                    <li><strong>No affiliation:</strong> our products are independent. They are not affiliated with, endorsed by or connected to any government, armed force, ministry or alliance, or to any other certifying body.</li>
+                    <li><strong>Purchases:</strong> in-app purchases and subscriptions are processed by Google Play Billing under Google Play's terms, including its refund policy. We never see your payment details.</li>
+                    <li><strong>As is:</strong> our products are provided "as is" and "as available". To the extent permitted by law, we give no warranty that they will be error-free or uninterrupted, and we are not liable for indirect or consequential loss arising from their use.</li>
+                    <li><strong>Changes:</strong> we may update, improve or retire features at any time, and we may update these terms. The date at the end of this page shows when they last changed.</li>
+                    <li><strong>Governing law:</strong> these terms are governed by the laws of the People's Republic of Bangladesh.</li>
+                </ul>
             </div>
 
             <div class="policy-card blue-accent">
-                <h2>2. Global Privacy & Telemetry Protocol</h2>
-                <p>We respect the operational security and privacy of our global user base. Our data collection philosophy is minimal, explicit, and secure.</p>
+                <h2>2. Privacy Principles</h2>
+                <p>We collect as little as possible, keep it on your device wherever we can, and say plainly when anything leaves it. Each product's own privacy policy (see the directory below) lists exactly what that product uses.</p>
                 <ul>
-                    <li><strong>Offline-First Architecture:</strong> Modules like the <em>Military Abbreviation</em> dictionary are engineered to function entirely offline, preventing unauthorized intelligence leakage.</li>
-                    <li><strong>Location & Topography:</strong> Tools requiring active GPS or Kalman-filtered coordinate tracking (e.g., <em>GR Converter Pro</em> and <em>Golf Gadget Pro</em>) process location data strictly locally on the user's device unless multiplayer/joint-operation functionality is explicitly enabled by the user.</li>
-                    <li><strong>No Unauthorized Tracking:</strong> We do not sell user biometric or personal identity data to third-party brokers. Advertising telemetry is governed strictly by standardized Google AdMob and Meta Audience Network mediation protocols.</li>
+                    <li><strong>On your device first:</strong> our apps work without accounts. Documents, routes, waypoints, scores, settings and progress stay on your device unless you choose to share or export them.</li>
+                    <li><strong>Location:</strong> apps that use GPS process it on your device. Location is only used by an online service when you choose a feature that needs one, such as live map tiles or a multiplayer tournament, as each app's policy explains.</li>
+                    <li><strong>Advertising:</strong> some free apps and games show ads from Google AdMob. Where the law requires it, you are asked for consent before personalised ads are shown, and you can opt out of personalised ads in your device settings at any time.</li>
+                    <li><strong>No selling of personal data:</strong> we do not sell personal data, and we never ask for biometric or identity documents.</li>
+                    <li><strong>Websites:</strong> zyeemzia.com and its sub-sites use no advertising or analytics cookies. Messages you send through the Direct Transmission Hub are delivered by FormSubmit to our inbox. The Academy course sites keep progress in your browser, run the official exam on our own server, and offer optional Google sign-in to sync progress.</li>
+                    <li><strong>Your rights:</strong> you can ask us to access, correct or delete personal data we hold about you, or object to its use, by contacting us. Most data never reaches us, so you can usually delete it yourself on your device.</li>
+                    <li><strong>Children:</strong> our products are not directed at children under 13 (or 16 in certain jurisdictions). Learners under 13 should use the Academy with a parent or guardian.</li>
+                </ul>
+            </div>
+
+            <div class="policy-card purple-accent">
+                <h2>3. Policy Directory</h2>
+                <p>The full privacy policy for each product:</p>
+                <ul class="policy-links">
+                    <li><strong>Apps:</strong> <a href="https://zyeemzia.com/privacy-militaryoffice.html">Military Office</a> · <a href="https://zyeemzia.com/privacy-militarymorsecode.html">Military Morse Code</a> · <a href="https://zyeemzia.com/privacy-militaryabbreviation.html">Military Abbreviation</a> · <a href="https://zyeemzia.com/privacy-militarygadget.html">Military Gadget</a> · <a href="https://zyeemzia.com/privacy-grconverterpro.html">GR Converter Pro</a> · <a href="https://zyeemzia.com/privacy-golfgadgetpro.html">Golf Gadget Pro</a></li>
+                    <li><strong>ZBZGames™:</strong> <a href="https://zbzgames.zyeemzia.com/privacy-bdairforcemini.html">Bangladesh Airforce Mini</a> · <a href="https://zbzgames.zyeemzia.com/privacy-golfcshipmini.html">Golf Championship Mini</a></li>
+                    <li><strong>ZyeemZia™ Academy:</strong> <a href="https://zpmp.zyeemzia.com/privacy.html">ZPMP</a> · <a href="https://zaia.zyeemzia.com/privacy.html">ZAIA</a> · <a href="https://zcna.zyeemzia.com/privacy.html">ZCNA</a> · <a href="https://zcnp.zyeemzia.com/privacy.html">ZCNP</a> · <a href="https://zcie.zyeemzia.com/privacy.html">ZCIE</a> · <a href="https://zcie-security.zyeemzia.com/privacy.html">ZCIE Security</a> · <a href="https://zcde.zyeemzia.com/privacy.html">ZCDE</a></li>
+                    <li><strong>Quran &amp; Arabic Learning:</strong> <a href="https://quranlearnarbi.zyeemzia.com/privacy.html">Privacy</a> · <a href="https://quranlearnarbi.zyeemzia.com/terms.html">Terms</a></li>
+                    <li><strong>Signals Corps Reunion:</strong> <a href="https://scr.zyeemzia.com/privacy.html">Privacy notice</a></li>
                 </ul>
             </div>
 
             <div class="policy-card emerald-accent">
-                <h2>3. Intellectual Property & Trademarks</h2>
-                <p>All software architectures, UI/UX designs, algorithms, codebases, and digital assets distributed under the ZyeemZia™ banner are the exclusive intellectual property of Zyeem Bin Zia.</p>
-                <p>The "ZyeemZia™" name, associated logos, and product titles (Military Abbreviation, GR Converter Pro, Golf Gadget Pro) are protected under international copyright and trademark protocols. Reverse engineering, unauthorized distribution, or brand impersonation is strictly prohibited and will be met with immediate digital platform takedowns.</p>
+                <h2>4. Intellectual Property</h2>
+                <p>The software, designs, code, artwork, course content and other material published under the ZyeemZia™ and ZBZGames™ names belong to Zyeem Bin Zia, unless a third-party licence says otherwise.</p>
+                <p>The ZyeemZia™ and ZBZGames™ names, logos and product titles are used as trademarks. Please do not copy, redistribute or reverse engineer our products, or use our brands in a way that suggests a connection that does not exist. We act on infringements through the platforms concerned.</p>
             </div>
 
             <div class="policy-card slate-accent">
-                <h2>4. App Store Compliance & Security</h2>
-                <p>All software published by ZyeemZia™ complies with the Developer Program Policies of the Google Play Store. We employ rigorous security audits to ensure that our applications are free from malicious payloads, unauthorized background scraping, and unauthorized privilege escalation.</p>
-                <p>For specific app-level Privacy Protocols, users are directed to view the dedicated policy links within the main dashboard of their respective applications.</p>
+                <h2>5. Security and Store Compliance</h2>
+                <p>Our apps are built to follow the Google Play Developer Program Policies. They request only the permissions their features need, explain each one in their privacy policy, and keep data on the device wherever possible. Connections to online services are encrypted.</p>
+                <p>If you find a security issue in any of our products, please report it privately to <a href="mailto:admin@zyeemzia.com">admin@zyeemzia.com</a> so we can fix it before it is made public.</p>
+                <p class="policy-date">Last updated: 19 October 2026</p>
             </div>
 
-            <!-- 5. DIRECT TRANSMISSION HUB (shared component from zyeemzia.com) -->
+            <!-- 6. DIRECT TRANSMISSION HUB (shared component from zyeemzia.com) -->
             <section class="tx-mount" id="contact" data-tx-policy="off" data-tx-topic="other" data-tx-source="policy.zyeemzia.com · Trust & Security Center" data-tx-lead="Contact and support escalation: for operational inquiries, software support, Academy certificates or data privacy concerns, transmit a message straight to the ZyeemZia command desk."></section>
 
         </div>
